@@ -8,22 +8,20 @@ export default function TodoApp() {
   //AddItem Function
   const AddItem = () => {
     if (!inputData) {
+      return null;
     } else {
       setItems([inputData, ...items]);
       setData("");
     }
   };
 
-  //DeleteItems Function
+  //DeleteItems Function here
   const deleteItem = (id) => {
-    const updatedItems = items.filter((ele, ind) => {
-      return ind !== id;
-    });
-
-    setItems(updatedItems);
+    const updatedItems = items.filter((_ele, ind) => ind !== id);
+    setItems([...updatedItems]);
   };
 
-  //RemoveAll Function
+  //RemoveAll Function Here
   const RemoveItems = () => {
     setItems([]);
   };
